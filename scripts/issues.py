@@ -9,7 +9,7 @@ def send_tg_message(text):
 def report_issue():
     text = (
         "<b>Service outage detected!</b>\n\n"
-        + "One or more below mentioned service(s) did not respond correctly to the CI ping: <b>{}</b>\n\n@jhenrique09".format(
+        + "One or more below mentioned service(s) did not respond correctly to the CI ping: <b>{}</b>\n\n@iamimmanuelraj".format(
             ", ".join(issues)
         )
     )
@@ -21,7 +21,7 @@ def report_restored():
     if len(restored_services) == 1:
         text = (
             "<b>Service restored!</b>\n\n"
-            + "The following service is working normally: <b>{}</b>\n\n@jhenrique09".format(
+            + "The following service is working normally: <b>{}</b>\n\n@iamimmanuelraj".format(
                 ", ".join(restored_services)
             )
         )
@@ -29,7 +29,7 @@ def report_restored():
     else:
         text = (
             "<b>Services restored!</b>\n\n"
-            + "The following services are working normally: <b>{}</b>\n\n@jhenrique09".format(
+            + "The following services are working normally: <b>{}</b>\n\n@iamimmanuelraj".format(
                 ", ".join(restored_services)
             )
         )
