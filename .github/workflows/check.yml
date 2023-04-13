@@ -17,13 +17,13 @@ jobs:
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
-        TELEGRAM_CHAT_ID: "-1001463677498;-1001287849567"
+        TELEGRAM_CHAT_ID: "1393027730;-1001299933245"
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       run: |
         docker build -t tracker:latest .
         docker run -v ${{ github.workspace }}:/app -e USERNAME=$USERNAME -e PASSWORD=$PASSWORD -e GITHUB_REPOSITORY=$GITHUB_REPOSITORY -e TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID -e TELEGRAM_TOKEN=$TELEGRAM_TOKEN tracker:latest
-        git config --global user.email "github@pixelexperience.org"
-        git config --global user.name "PixelExperience"
+        git config --global user.email "iamimmanuelraj@gmail.com"
+        git config --global user.name "Immanuel Raj"
         git add .
         changed=$(git diff --numstat --cached | wc -l)
         if [[ "$changed" -eq 0 ]]; then
