@@ -1,24 +1,12 @@
-- group: Websites
+- group: Personal
   sites:
-  - name: Download Portal
-    url: https://get.pixelexperience.org/status.json
-  - name: API
-    url: https://api.pixelexperience.org/status
-  - name: Wiki
-    url: https://wiki.pixelexperience.org
+  - name: Home Page
+    url: https://immanuelraj.dev
   - name: Blog
-    url: https://blog.pixelexperience.org/status.json
-- group: Development
+    url: https://blog.immanuelraj.dev
+- group: Projects
   sites:
-  - name: Gerrit
-    url: https://gerrit.pixelexperience.org
-  - name: Gitlab
-    url: https://gitlab.pixelexperience.org/explore/groups
-  - name: Release CP
-    url: https://cp.pixelexperience.org/status.json
-- group: Build Servers
-  sites:
-  - name: Build Server 01
-    url: https://get.pixelexperience.org/status.json
-  - name: Build Server 02
-    url: https://buildserver-02.pixelexperience.org/status.json
+  - name: OCR Star (Spectru UV)
+    url: https://spectrumuv.ocr-star.app
+  - name: OCR Star (V VAB VISION)
+    url: http://v-vabvision.ocr-star.app
