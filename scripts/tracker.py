@@ -77,7 +77,7 @@ for status in nstatus:
 
 header = []
 for status in nstatus:
-    if "Build Server" not in status:
+    if "Personal" not in status:
         s = nstatus[status]["group-status"]
         header.append(s)
 
