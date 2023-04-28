@@ -1,20 +1,12 @@
-Build Servers:
-  group-status: major
+Personal:
+  group-status: partial
   sites:
-    Build Server 01: operational
-    Build Server 02: major
-Development:
+    Blog: partial
+    Home Page: operational
+Projects:
   group-status: operational
   sites:
-    Gerrit: operational
-    Gitlab: operational
-    Release CP: operational
-Websites:
-  group-status: operational
-  sites:
-    API: operational
-    Blog: operational
-    Download Portal: operational
-    Wiki: operational
+    OCR Star (Spectru UV): operational
+    OCR Star (V VAB VISION): operational
 statement: All systems are operational
 status-class: no-issues
