@@ -1,8 +1,8 @@
 Personal:
-  group-status: major
+  group-status: operational
   sites:
-    Blog: major
-    Home Page: major
+    Blog: operational
+    Home Page: operational
 Projects:
   group-status: operational
   sites:
