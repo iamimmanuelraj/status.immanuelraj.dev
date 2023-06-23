@@ -4,9 +4,9 @@ Personal:
     Blog: operational
     Home Page: operational
 Projects:
-  group-status: operational
+  group-status: partial
   sites:
-    OCR Star (Spectru UV): operational
+    OCR Star (Spectru UV): partial
     OCR Star (V VAB VISION): operational
-statement: All systems are operational
-status-class: no-issues
+statement: We are suffering a partial outage
+status-class: partial
