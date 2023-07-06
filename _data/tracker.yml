@@ -10,9 +10,5 @@
     url: https://drive.immanuelraj.dev
 - group: Projects
   sites:
-  - name: OCR Star (Spectru UV)
-    url: https://spectrumuv.ocr-star.app
-  - name: OCR Star (V VAB VISION)
-    url: https://v-vabvision.ocr-star.app
   - name: AIML B Drive
     url: https://files.aimlb.workers.dev
