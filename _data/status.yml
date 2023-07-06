@@ -7,6 +7,6 @@ Projects:
   group-status: major
   sites:
     OCR Star (Spectru UV): major
-    OCR Star (V VAB VISION): operational
+    OCR Star (V VAB VISION): partial
 statement: We are suffering a major outage
 status-class: critical
