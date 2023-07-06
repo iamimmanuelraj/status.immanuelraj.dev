@@ -2,11 +2,12 @@ Personal:
   group-status: operational
   sites:
     Blog: operational
+    Drive: operational
     Home Page: operational
+    Links: operational
 Projects:
-  group-status: major
+  group-status: operational
   sites:
-    OCR Star (Spectru UV): major
-    OCR Star (V VAB VISION): major
-statement: We are suffering a major outage
-status-class: critical
+    AIML B Drive: operational
+statement: All systems are operational
+status-class: no-issues
