@@ -4,6 +4,8 @@
     url: https://immanuelraj.dev
   - name: Blog
     url: https://blog.immanuelraj.dev
+  - name: Links
+    url: https://links.immanuelraj.dev
 - group: Projects
   sites:
   - name: OCR Star (Spectru UV)
