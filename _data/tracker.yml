@@ -8,7 +8,13 @@
     url: https://links.immanuelraj.dev
   - name: Drive
     url: https://drive.immanuelraj.dev
-- group: Projects
+- group: Projects (College)
   sites:
   - name: AIML B Drive
     url: https://files.aimlb.workers.dev
+- group: Work
+  sites:
+  - name: Server (Home Page)
+    url: https://immanuelraj.rt.gw
+  - name: Server (Blog)
+    url: https://immanuelraj.rt.gw/wordpress
