@@ -5,9 +5,14 @@ Personal:
     Drive: operational
     Home Page: operational
     Links: operational
-Projects:
+Projects (College):
   group-status: operational
   sites:
     AIML B Drive: operational
-statement: All systems are operational
-status-class: no-issues
+Work:
+  group-status: partial
+  sites:
+    Server (Blog): partial
+    Server (Home Page): partial
+statement: We are suffering a partial outage
+status-class: partial
