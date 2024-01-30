@@ -10,9 +10,9 @@ Projects (College):
   sites:
     AIML B Drive: operational
 Work:
-  group-status: major
+  group-status: partial
   sites:
-    Server (Blog): major
-    Server (Home Page): operational
-statement: We are suffering a major outage
-status-class: critical
+    Server (Blog): operational
+    Server (Home Page): partial
+statement: We are suffering a partial outage
+status-class: partial
