@@ -13,6 +13,6 @@ Work:
   group-status: major
   sites:
     Server (Blog): major
-    Server (Home Page): major
+    Server (Home Page): operational
 statement: We are suffering a major outage
 status-class: critical
