@@ -1,9 +1,9 @@
 Personal:
-  group-status: operational
+  group-status: partial
   sites:
     Blog: operational
     Drive: operational
-    Home Page: operational
+    Home Page: partial
     Links: operational
 Projects (College):
   group-status: operational
