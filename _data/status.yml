@@ -1,7 +1,7 @@
 Personal:
-  group-status: operational
+  group-status: partial
   sites:
-    Blog: operational
+    Blog: partial
     Drive: operational
     Home Page: operational
     Links: operational
