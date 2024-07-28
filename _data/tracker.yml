@@ -22,3 +22,7 @@
     url: https://jackett.immanuelraj.dev
   - name: Sonarr
     url: https://sonarr.immanuelraj.dev
+- group: College (Projects)
+  sites:
+  - name: AIML B Drive
+    url: https://files.aimlb.workers.dev
