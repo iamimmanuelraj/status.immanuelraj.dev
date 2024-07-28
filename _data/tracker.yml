@@ -1,20 +1,24 @@
-- group: Personal
+- group: Personal (Sites)
   sites:
   - name: Home Page
     url: https://immanuelraj.dev
-  - name: Blog
-    url: https://blog.immanuelraj.dev
-  - name: Links
-    url: https://links.immanuelraj.dev
-  - name: Drive
+  - name: Files
     url: https://drive.immanuelraj.dev
-- group: Projects (College)
+- group: Personal (Applications)
   sites:
-  - name: AIML B Drive
-    url: https://files.aimlb.workers.dev
-- group: Work
-  sites:
-  - name: Server (Home Page)
-    url: https://immanuelraj.rt.gw
-  - name: Server (Blog)
-    url: https://immanuelraj.rt.gw/wordpress
+  - name: WireGuard
+    url: https://wireguard.immanuelraj.dev
+  - name: CasaOS
+    url: https://casaos.immanuelraj.dev
+  - name: Jellyfin
+    url: https://jellyfin.immanuelraj.dev
+  - name: Jellseerr
+    url: https://jellseerr.immanuelraj.dev
+  - name: Radarr
+    url: https://radarr.immanuelraj.dev
+  - name: Transmission
+    url: https://transmission.immanuelraj.dev
+  - name: Jackett
+    url: https://jackett.immanuelraj.dev
+  - name: Sonarr
+    url: https://sonarr.immanuelraj.dev
