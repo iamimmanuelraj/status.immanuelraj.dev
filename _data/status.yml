@@ -1,18 +1,22 @@
-Personal:
-  group-status: major
-  sites:
-    Blog: major
-    Drive: operational
-    Home Page: operational
-    Links: operational
-Projects (College):
+College (Projects):
   group-status: operational
   sites:
     AIML B Drive: operational
-Work:
-  group-status: major
+Personal (Applications):
+  group-status: partial
   sites:
-    Server (Blog): major
-    Server (Home Page): major
-statement: We are suffering a major outage
-status-class: critical
+    CasaOS: operational
+    Jackett: operational
+    Jellseerr: partial
+    Jellyfin: operational
+    Radarr: partial
+    Sonarr: partial
+    Transmission: partial
+    WireGuard: operational
+Personal (Sites):
+  group-status: operational
+  sites:
+    Files: operational
+    Home Page: operational
+statement: All systems are operational
+status-class: no-issues
