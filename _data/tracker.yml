@@ -16,8 +16,6 @@
     url: https://jellyseerr.immanuelraj.dev
   - name: Radarr
     url: https://radarr.immanuelraj.dev
-  - name: Transmission
-    url: https://transmission.immanuelraj.dev
   - name: Jackett
     url: https://jackett.immanuelraj.dev
   - name: Sonarr
