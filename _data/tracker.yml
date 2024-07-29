@@ -12,7 +12,7 @@
     url: https://casaos.immanuelraj.dev
   - name: Jellyfin
     url: https://jellyfin.immanuelraj.dev
-  - name: Jellseerr
+  - name: Jellyseerr
     url: https://jellyseerr.immanuelraj.dev
   - name: Radarr
     url: https://radarr.immanuelraj.dev
