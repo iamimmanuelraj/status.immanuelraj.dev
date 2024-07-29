@@ -7,8 +7,8 @@ Personal (Applications):
   sites:
     CasaOS: operational
     Jackett: operational
-    Jellseerr: operational
     Jellyfin: operational
+    Jellyseerr: operational
     Radarr: operational
     Sonarr: operational
     Transmission: major
