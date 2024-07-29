@@ -13,7 +13,7 @@
   - name: Jellyfin
     url: https://jellyfin.immanuelraj.dev
   - name: Jellseerr
-    url: https://jellseerr.immanuelraj.dev/login
+    url: https://jellseerr.immanuelraj.dev
   - name: Radarr
     url: https://radarr.immanuelraj.dev
   - name: Transmission
