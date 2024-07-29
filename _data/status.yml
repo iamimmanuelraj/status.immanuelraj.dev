@@ -9,8 +9,8 @@ Personal (Applications):
     Jackett: operational
     Jellseerr: major
     Jellyfin: operational
-    Radarr: major
-    Sonarr: major
+    Radarr: operational
+    Sonarr: operational
     Transmission: major
     WireGuard: operational
 Personal (Sites):
