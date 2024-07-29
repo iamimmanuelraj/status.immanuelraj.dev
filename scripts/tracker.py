@@ -14,7 +14,7 @@ def is_up(url):
             response = head(url)
             status_code = response.status_code
             print("Status code: " + str(status_code))
-            if status_code == 200 or status_code == 302 or status_code == 301:
+            if status_code == 200 or status_code == 302 or status_code == 301 or status_code == 307:
                 return True
         except Exception as e:
             print(e)
