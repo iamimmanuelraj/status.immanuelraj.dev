@@ -1,6 +1,7 @@
 name: Status tracking
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   schedule:
