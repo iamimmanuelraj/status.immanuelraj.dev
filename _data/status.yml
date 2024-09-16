@@ -3,12 +3,12 @@ College (Projects):
   sites:
     AIML B Drive: operational
 Personal (Applications):
-  group-status: operational
+  group-status: partial
   sites:
     CasaOS: operational
     Jackett: operational
-    Jellyfin: operational
-    Jellyseerr: operational
+    Jellyfin: partial
+    Jellyseerr: partial
     Radarr: operational
     Sonarr: operational
     WireGuard: operational
