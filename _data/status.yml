@@ -13,9 +13,9 @@ Personal (Applications):
     Sonarr: major
     WireGuard: operational
 Personal (Sites):
-  group-status: partial
+  group-status: major
   sites:
     Files: operational
-    Home Page: partial
+    Home Page: major
 statement: All systems are operational
 status-class: no-issues
