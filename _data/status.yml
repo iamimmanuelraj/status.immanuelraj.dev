@@ -5,13 +5,13 @@ College (Projects):
 Personal (Applications):
   group-status: major
   sites:
-    CasaOS: major
+    CasaOS: operational
     Jackett: major
     Jellyfin: major
     Jellyseerr: major
     Radarr: major
     Sonarr: major
-    WireGuard: major
+    WireGuard: operational
 Personal (Sites):
   group-status: operational
   sites:
