@@ -4,22 +4,6 @@
     url: https://immanuelraj.dev
   - name: Files
     url: https://drive.immanuelraj.dev
-- group: Personal (Applications)
-  sites:
-  - name: WireGuard
-    url: https://wireguard.immanuelraj.dev
-  - name: CasaOS
-    url: https://casaos.immanuelraj.dev
-  - name: Jellyfin
-    url: https://jellyfin.immanuelraj.dev
-  - name: Jellyseerr
-    url: https://jellyseerr.immanuelraj.dev
-  - name: Radarr
-    url: https://radarr.immanuelraj.dev
-  - name: Jackett
-    url: https://jackett.immanuelraj.dev
-  - name: Sonarr
-    url: https://sonarr.immanuelraj.dev
 - group: College (Projects)
   sites:
   - name: AIML B Drive
