@@ -2,16 +2,6 @@ College (Projects):
   group-status: operational
   sites:
     AIML B Drive: operational
-Personal (Applications):
-  group-status: major
-  sites:
-    CasaOS: operational
-    Jackett: major
-    Jellyfin: major
-    Jellyseerr: major
-    Radarr: major
-    Sonarr: major
-    WireGuard: operational
 Personal (Sites):
   group-status: operational
   sites:
