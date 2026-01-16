@@ -4,6 +4,22 @@
     url: https://immanuelraj.dev
   - name: Files
     url: https://drive.immanuelraj.dev
+- group: Personal (Hosted)
+  sites:
+  - name: Addy Technologies Home Page
+    url: https://addytechnologies.com
+  - name: N8N
+    url: https://n8n.immanuelraj.dev
+  - name: YTDL
+    url: https://ytdl.immanuelraj.dev
+  - name: Vert
+    url: https://vert.immanuelraj.dev
+  - name: Secrets Share
+    url: https://secrets.immanuelraj.dev
+  - name: Messenger Relay
+    url: https://evolution.immanuelraj.dev
+  - name: Files Converter
+    url: https://convertx.immanuelraj.dev
 - group: College (Projects)
   sites:
   - name: AIML B Drive
