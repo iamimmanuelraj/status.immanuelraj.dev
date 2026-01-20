@@ -3,15 +3,15 @@ College (Projects):
   sites:
     AIML B Drive: operational
 Personal (Hosted):
-  group-status: operational
+  group-status: partial
   sites:
     Addy Technologies Home Page: operational
-    Files Converter: operational
+    Files Converter: partial
     Messenger Relay: operational
     N8N: operational
-    Secrets Share: operational
-    Vert: operational
-    YTDL: operational
+    Secrets Share: partial
+    Vert: partial
+    YTDL: partial
 Personal (Sites):
   group-status: major
   sites:
