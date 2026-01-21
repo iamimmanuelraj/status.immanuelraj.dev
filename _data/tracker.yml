@@ -20,6 +20,10 @@
     url: https://evolution.immanuelraj.dev
   - name: Files Converter
     url: https://convertx.immanuelraj.dev
+  - name: Coolify Host
+    url: https://coolify.immanuelraj.dev
+  - name: Churchkit Dashboard
+    url: https://dash.churchkit.app
 - group: College (Projects)
   sites:
   - name: AIML B Drive
