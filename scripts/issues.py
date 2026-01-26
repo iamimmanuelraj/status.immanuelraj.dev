@@ -7,13 +7,23 @@ async def send_tg_message(text):
         await tg_bot.send_message(chat_id, text, "HTML")
 
 def report_issue():
+    # Format each service with its URL as a hyperlink
+    services_list = []
+    for issue in issues:
+        if isinstance(issue, dict):
+            # Format as HTML link for Telegram
+            services_list.append('<a href="{}">{}</a>'.format(issue["url"], issue["name"]))
+        else:
+            # Fallback for old format (just name)
+            services_list.append(issue)
+    
     text = (
         "<b>Service outage detected!</b>\n\n"
-        + "One or more below mentioned service(s) did not respond correctly to the CI ping: <b>{}</b>\n\n@iamimmanuelraj".format(
-            ", ".join(issues)
+        + "One or more below mentioned service(s) did not respond correctly to the CI ping:\n\n{}\n\n@iamimmanuelraj".format(
+            "\n".join(services_list)
         )
     )
-    print("Service outage detected: " + ", ".join(issues))
+    print("Service outage detected: " + ", ".join([issue["name"] if isinstance(issue, dict) else issue for issue in issues]))
     asyncio.run(send_tg_message(text))
 
 
