@@ -64,6 +64,7 @@ for group in tracker:
                     nstatus[gname]["sites"][sname] = "major"
             else:
                 nstatus[gname]["sites"][sname] = "partial"
+                issues.append({"name": sname, "url": site["url"]})
 
 for status in nstatus:
     s = nstatus[status]["sites"].values()
