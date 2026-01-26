@@ -1,4 +1,5 @@
 import os, yaml, telegram, sys, asyncio
+from html import escape
 
 
 async def send_tg_message(text):
@@ -6,16 +7,23 @@ async def send_tg_message(text):
     for chat_id in os.getenv("TELEGRAM_CHAT_ID").split(";"):
         await tg_bot.send_message(chat_id, text, "HTML")
 
+def get_issue_name(issue):
+    """Extract the name from an issue (dict or string)."""
+    return issue["name"] if isinstance(issue, dict) else issue
+
+
 def report_issue():
     # Format each service with its URL as a hyperlink
     services_list = []
     for issue in issues:
         if isinstance(issue, dict):
-            # Format as HTML link for Telegram
-            services_list.append('<a href="{}">{}</a>'.format(issue["url"], issue["name"]))
+            # Format as HTML link for Telegram (with HTML escaping for security)
+            safe_url = escape(issue["url"])
+            safe_name = escape(issue["name"])
+            services_list.append('<a href="{}">{}</a>'.format(safe_url, safe_name))
         else:
             # Fallback for old format (just name)
-            services_list.append(issue)
+            services_list.append(escape(issue))
     
     text = (
         "<b>Service outage detected!</b>\n\n"
@@ -23,7 +31,7 @@ def report_issue():
             "\n".join(services_list)
         )
     )
-    print("Service outage detected: " + ", ".join([issue["name"] if isinstance(issue, dict) else issue for issue in issues]))
+    print("Service outage detected: " + ", ".join([get_issue_name(issue) for issue in issues]))
     asyncio.run(send_tg_message(text))
 
 
