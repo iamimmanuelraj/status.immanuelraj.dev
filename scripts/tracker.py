@@ -59,7 +59,7 @@ for group in tracker:
             if sname in ostatus[gname]["sites"]:
                 if ostatus[gname]["sites"][sname] == "operational":
                     nstatus[gname]["sites"][sname] = "partial"
-                    issues.append(sname)
+                    issues.append({"name": sname, "url": site["url"]})
                 else:
                     nstatus[gname]["sites"][sname] = "major"
             else:
