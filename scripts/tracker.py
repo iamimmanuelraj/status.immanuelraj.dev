@@ -49,7 +49,7 @@ for group in tracker:
                 and ostatus[gname]["sites"][sname] != "operational"
             )
             if is_restored:
-                restored.append(sname)
+                restored.append({"name": sname, "url": site["url"]})
             nstatus[gname]["sites"][sname] = "operational"
         else:
             ostatus[gname] = {} if gname not in ostatus else ostatus[gname]

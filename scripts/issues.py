@@ -36,22 +36,34 @@ def report_issue():
 
 
 def report_restored():
+    # Format each service with its URL as a hyperlink
+    services_list = []
+    for service in restored_services:
+        if isinstance(service, dict):
+            # Format as HTML link for Telegram (with HTML escaping for security)
+            safe_url = escape(service["url"])
+            safe_name = escape(service["name"])
+            services_list.append('<a href="{}">{}</a>'.format(safe_url, safe_name))
+        else:
+            # Fallback for old format (just name)
+            services_list.append(escape(service))
+    
     if len(restored_services) == 1:
         text = (
             "<b>Service restored!</b>\n\n"
-            + "The following service is working normally: <b>{}</b>\n\n@iamimmanuelraj".format(
-                ", ".join(restored_services)
+            + "The following service is working normally:\n\n{}\n\n@iamimmanuelraj".format(
+                "\n".join(services_list)
             )
         )
-        print("Service restored: " + ", ".join(restored_services))
+        print("Service restored: " + ", ".join([get_issue_name(service) for service in restored_services]))
     else:
         text = (
             "<b>Services restored!</b>\n\n"
-            + "The following services are working normally: <b>{}</b>\n\n@iamimmanuelraj".format(
-                ", ".join(restored_services)
+            + "The following services are working normally:\n\n{}\n\n@iamimmanuelraj".format(
+                "\n".join(services_list)
             )
         )
-        print("Services restored: " + ", ".join(restored_services))
+        print("Services restored: " + ", ".join([get_issue_name(service) for service in restored_services]))
     asyncio.run(send_tg_message(text))
 
 
