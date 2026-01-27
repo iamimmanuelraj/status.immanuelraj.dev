@@ -15,14 +15,11 @@ def is_up(url):
         try:
             # Use GET instead of HEAD because some servers (like Cloudflare Workers)
             # don't support HEAD requests properly. stream=True avoids downloading the response body.
-            response = get(url, timeout=timeout, allow_redirects=True, stream=True)
-            try:
+            with get(url, timeout=timeout, allow_redirects=True, stream=True) as response:
                 status_code = response.status_code
                 print("Status code: " + str(status_code))
-                if status_code == 200 or status_code == 302 or status_code == 301 or status_code == 307 or status_code == 401:
+                if status_code in [200, 301, 302, 307, 401]:
                     return True
-            finally:
-                response.close()  # Ensure connection is closed
         except Exception as e:
             print(e)
         retries += 1
