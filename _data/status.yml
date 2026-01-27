@@ -1,23 +1,23 @@
 College (Projects):
-  group-status: operational
+  group-status: major
   sites:
-    AIML B Drive: operational
+    AIML B Drive: major
 Personal (Hosted):
-  group-status: operational
+  group-status: major
   sites:
-    Addy Technologies Home Page: operational
-    Churchkit Dashboard: operational
-    Coolify Host: operational
-    Files Converter: operational
-    Messenger Relay: operational
-    N8N: operational
-    Secrets Share: operational
-    Vert: operational
-    YTDL: operational
+    Addy Technologies Home Page: major
+    Churchkit Dashboard: major
+    Coolify Host: major
+    Files Converter: major
+    Messenger Relay: major
+    N8N: major
+    Secrets Share: major
+    Vert: major
+    YTDL: major
 Personal (Sites):
   group-status: major
   sites:
     Files: major
-    Home Page: operational
-statement: All systems are operational
-status-class: no-issues
+    Home Page: major
+statement: We are suffering a major outage
+status-class: critical

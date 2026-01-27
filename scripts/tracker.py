@@ -1,5 +1,6 @@
 import yaml, os, sys, time
 from requests import head
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 issues = []
 restored = []
@@ -8,10 +9,11 @@ nstatus = {}
 
 def is_up(url):
     retries = 0
-    max_retries = 10
+    max_retries = 3  # Reduced from 10 to 3
+    timeout = 5  # 5 second timeout per request
     while retries < max_retries:
         try:
-            response = head(url)
+            response = head(url, timeout=timeout, allow_redirects=True)
             status_code = response.status_code
             print("Status code: " + str(status_code))
             if status_code == 200 or status_code == 302 or status_code == 301 or status_code == 307 or status_code == 401:
@@ -19,8 +21,49 @@ def is_up(url):
         except Exception as e:
             print(e)
         retries += 1
-        time.sleep(5)
+        if retries < max_retries:
+            time.sleep(1)  # Reduced from 5 to 1 second
     return False
+
+
+def check_site(gname, site, ostatus):
+    """Check a single site and return its status"""
+    sname = site["name"]
+    url = site["url"]
+    print("Checking: " + sname)
+    
+    result = {
+        'gname': gname,
+        'sname': sname,
+        'url': url,
+        'status': None,
+        'is_restored': False,
+        'issue': None
+    }
+    
+    if is_up(url):
+        is_restored = (
+            gname in ostatus
+            and sname in ostatus[gname]["sites"]
+            and ostatus[gname]["sites"][sname] != "operational"
+        )
+        result['status'] = "operational"
+        result['is_restored'] = is_restored
+    else:
+        ostatus_gname = ostatus.get(gname, {})
+        ostatus_sites = ostatus_gname.get("sites", {})
+        
+        if sname in ostatus_sites:
+            if ostatus_sites[sname] == "operational":
+                result['status'] = "partial"
+                result['issue'] = {"name": sname, "url": url}
+            else:
+                result['status'] = "major"
+        else:
+            result['status'] = "partial"
+            result['issue'] = {"name": sname, "url": url}
+    
+    return result
 
 
 try:
@@ -34,37 +77,51 @@ try:
 except:
     print("_tracker.yml not found. Cannot check for status.")
 
+# Initialize nstatus for all groups first
 for group in tracker:
     gname = group["group"]
     print("Running status check for group {}".format(gname))
     nstatus[gname] = {}
     nstatus[gname]["sites"] = {}
+
+# Prepare all sites to check
+sites_to_check = []
+for group in tracker:
+    gname = group["group"]
     for site in group["sites"]:
-        sname = site["name"]
-        print("Checking: " + sname)
-        if is_up(site["url"]):
-            is_restored = (
-                gname in ostatus
-                and sname in ostatus[gname]["sites"]
-                and ostatus[gname]["sites"][sname] != "operational"
-            )
-            if is_restored:
-                restored.append({"name": sname, "url": site["url"]})
-            nstatus[gname]["sites"][sname] = "operational"
-        else:
-            ostatus[gname] = {} if gname not in ostatus else ostatus[gname]
-            ostatus[gname]["sites"] = (
-                {} if "sites" not in ostatus[gname] else ostatus[gname]["sites"]
-            )
-            if sname in ostatus[gname]["sites"]:
-                if ostatus[gname]["sites"][sname] == "operational":
-                    nstatus[gname]["sites"][sname] = "partial"
-                    issues.append({"name": sname, "url": site["url"]})
-                else:
-                    nstatus[gname]["sites"][sname] = "major"
-            else:
-                nstatus[gname]["sites"][sname] = "partial"
-                issues.append({"name": sname, "url": site["url"]})
+        sites_to_check.append((gname, site))
+
+# Check all sites in parallel using ThreadPoolExecutor
+max_workers = 10  # Check up to 10 sites concurrently
+with ThreadPoolExecutor(max_workers=max_workers) as executor:
+    # Submit all tasks
+    future_to_site = {
+        executor.submit(check_site, gname, site, ostatus): (gname, site)
+        for gname, site in sites_to_check
+    }
+    
+    # Process results as they complete
+    for future in as_completed(future_to_site):
+        try:
+            result = future.result()
+            gname = result['gname']
+            sname = result['sname']
+            
+            # Store site status (thread-safe because we pre-initialized all groups)
+            nstatus[gname]["sites"][sname] = result['status']
+            
+            # Track restored sites
+            if result['is_restored']:
+                restored.append({"name": sname, "url": result['url']})
+            
+            # Track issues
+            if result['issue']:
+                issues.append(result['issue'])
+                
+        except Exception as e:
+            gname_err, site_err = future_to_site.get(future, ("unknown", {}))
+            site_name = site_err.get("name", "unknown") if isinstance(site_err, dict) else "unknown"
+            print(f"Error processing site {site_name}: {e}")
 
 for status in nstatus:
     s = nstatus[status]["sites"].values()
