@@ -2,6 +2,9 @@ import yaml, os, sys, time
 from requests import get
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# Status codes that indicate a service is operational
+VALID_STATUS_CODES = [200, 301, 302, 307, 401]
+
 issues = []
 restored = []
 nstatus = {}
@@ -18,7 +21,7 @@ def is_up(url):
             with get(url, timeout=timeout, allow_redirects=True, stream=True) as response:
                 status_code = response.status_code
                 print("Status code: " + str(status_code))
-                if status_code in [200, 301, 302, 307, 401]:
+                if status_code in VALID_STATUS_CODES:
                     return True
         except Exception as e:
             print(e)
