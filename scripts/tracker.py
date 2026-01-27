@@ -77,6 +77,7 @@ try:
 except:
     print("_tracker.yml not found. Cannot check for status.")
 
+# Initialize nstatus for all groups first
 for group in tracker:
     gname = group["group"]
     print("Running status check for group {}".format(gname))
@@ -106,11 +107,7 @@ with ThreadPoolExecutor(max_workers=max_workers) as executor:
             gname = result['gname']
             sname = result['sname']
             
-            # Initialize group if not exists
-            if gname not in nstatus:
-                nstatus[gname] = {"sites": {}}
-            
-            # Store site status
+            # Store site status (thread-safe because we pre-initialized all groups)
             nstatus[gname]["sites"][sname] = result['status']
             
             # Track restored sites
