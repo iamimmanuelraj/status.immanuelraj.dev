@@ -3,6 +3,9 @@ from requests import get
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Status codes that indicate a service is operational
+# 200: OK - Standard success response
+# 301/302/307: Redirects - Service is up but redirecting (handled by allow_redirects=True)
+# 401: Unauthorized - Service is responding but requires authentication
 VALID_STATUS_CODES = [200, 301, 302, 307, 401]
 
 issues = []
