@@ -15,9 +15,8 @@ Personal (Hosted):
     Vert: operational
     YTDL: operational
 Personal (Sites):
-  group-status: major
+  group-status: operational
   sites:
-    Files: major
     Home Page: operational
 statement: We are suffering a major outage
 status-class: critical
