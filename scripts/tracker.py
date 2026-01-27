@@ -112,7 +112,7 @@ with ThreadPoolExecutor(max_workers=max_workers) as executor:
             
             # Track restored sites
             if result['is_restored']:
-                restored.append(sname)
+                restored.append({"name": sname, "url": result['url']})
             
             # Track issues
             if result['issue']:
