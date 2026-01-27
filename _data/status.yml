@@ -1,23 +1,23 @@
 College (Projects):
-  group-status: operational
+  group-status: partial
   sites:
-    AIML B Drive: operational
+    AIML B Drive: partial
 Personal (Hosted):
-  group-status: operational
+  group-status: partial
   sites:
-    Addy Technologies Home Page: operational
-    Churchkit Dashboard: operational
-    Coolify Host: operational
-    Files Converter: operational
-    Messenger Relay: operational
-    N8N: operational
-    Secrets Share: operational
-    Vert: operational
-    YTDL: operational
+    Addy Technologies Home Page: partial
+    Churchkit Dashboard: partial
+    Coolify Host: partial
+    Files Converter: partial
+    Messenger Relay: partial
+    N8N: partial
+    Secrets Share: partial
+    Vert: partial
+    YTDL: partial
 Personal (Sites):
   group-status: major
   sites:
     Files: major
-    Home Page: operational
-statement: All systems are operational
-status-class: no-issues
+    Home Page: partial
+statement: We are suffering a partial outage
+status-class: partial
