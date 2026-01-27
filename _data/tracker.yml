@@ -2,8 +2,6 @@
   sites:
   - name: Home Page
     url: https://immanuelraj.dev
-  - name: Files
-    url: https://drive.immanuelraj.dev
 - group: Personal (Hosted)
   sites:
   - name: Addy Technologies Home Page
