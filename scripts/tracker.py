@@ -1,5 +1,5 @@
 import yaml, os, sys, time
-from requests import head
+from requests import get
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 issues = []
@@ -13,8 +13,10 @@ def is_up(url):
     timeout = 5  # 5 second timeout per request
     while retries < max_retries:
         try:
-            response = head(url, timeout=timeout, allow_redirects=True)
+            # Use GET with stream=True to avoid downloading the entire response
+            response = get(url, timeout=timeout, allow_redirects=True, stream=True)
             status_code = response.status_code
+            response.close()  # Close the connection since we're not reading the body
             print("Status code: " + str(status_code))
             if status_code == 200 or status_code == 302 or status_code == 301 or status_code == 307 or status_code == 401:
                 return True
