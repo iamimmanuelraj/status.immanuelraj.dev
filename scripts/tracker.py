@@ -119,7 +119,9 @@ with ThreadPoolExecutor(max_workers=max_workers) as executor:
                 issues.append(result['issue'])
                 
         except Exception as e:
-            print(f"Error processing site: {e}")
+            gname_err, site_err = future_to_site.get(future, ("unknown", {}))
+            site_name = site_err.get("name", "unknown") if isinstance(site_err, dict) else "unknown"
+            print(f"Error processing site {site_name}: {e}")
 
 for status in nstatus:
     s = nstatus[status]["sites"].values()

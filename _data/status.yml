@@ -1,23 +1,23 @@
 College (Projects):
-  group-status: partial
+  group-status: major
   sites:
-    AIML B Drive: partial
+    AIML B Drive: major
 Personal (Hosted):
-  group-status: partial
+  group-status: major
   sites:
-    Addy Technologies Home Page: partial
-    Churchkit Dashboard: partial
-    Coolify Host: partial
-    Files Converter: partial
-    Messenger Relay: partial
-    N8N: partial
-    Secrets Share: partial
-    Vert: partial
-    YTDL: partial
+    Addy Technologies Home Page: major
+    Churchkit Dashboard: major
+    Coolify Host: major
+    Files Converter: major
+    Messenger Relay: major
+    N8N: major
+    Secrets Share: major
+    Vert: major
+    YTDL: major
 Personal (Sites):
   group-status: major
   sites:
     Files: major
-    Home Page: partial
-statement: We are suffering a partial outage
-status-class: partial
+    Home Page: major
+statement: We are suffering a major outage
+status-class: critical
