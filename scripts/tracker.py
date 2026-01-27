@@ -1,6 +1,12 @@
 import yaml, os, sys, time
-from requests import head
+from requests import get
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# Status codes that indicate a service is operational
+# 200: OK - Standard success response
+# 301/302/307: Redirects - Service is up but redirecting (handled by allow_redirects=True)
+# 401: Unauthorized - Service is responding but requires authentication
+VALID_STATUS_CODES = [200, 301, 302, 307, 401]
 
 issues = []
 restored = []
@@ -13,11 +19,13 @@ def is_up(url):
     timeout = 5  # 5 second timeout per request
     while retries < max_retries:
         try:
-            response = head(url, timeout=timeout, allow_redirects=True)
-            status_code = response.status_code
-            print("Status code: " + str(status_code))
-            if status_code == 200 or status_code == 302 or status_code == 301 or status_code == 307 or status_code == 401:
-                return True
+            # Use GET instead of HEAD because some servers (like Cloudflare Workers)
+            # don't support HEAD requests properly. stream=True avoids downloading the response body.
+            with get(url, timeout=timeout, allow_redirects=True, stream=True) as response:
+                status_code = response.status_code
+                print("Status code: " + str(status_code))
+                if status_code in VALID_STATUS_CODES:
+                    return True
         except Exception as e:
             print(e)
         retries += 1
