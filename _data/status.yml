@@ -11,6 +11,6 @@ Personal (Hosted):
     Vert: operational
     YTDL: operational
 Personal (Sites):
-  group-status: operational
+  group-status: partial
   sites:
-    Home Page: operational
+    Home Page: partial
