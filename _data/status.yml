@@ -1,12 +1,12 @@
 Personal (Hosted):
-  group-status: operational
+  group-status: partial
   sites:
     Addy Technologies Home Page: operational
     Churchkit Dashboard: operational
     Coolify Host: operational
     Files Converter: operational
     Messenger Relay: operational
-    N8N: operational
+    N8N: partial
     Secrets Share: operational
     Vert: operational
     YTDL: operational
