@@ -1,17 +1,17 @@
 Personal (Hosted):
-  group-status: major
+  group-status: operational
   sites:
     Addy Technologies Home Page: operational
-    Churchkit Dashboard: major
-    Coolify Host: major
-    Files Converter: major
-    Messenger Relay: major
-    N8N: major
-    Secrets Share: major
+    Churchkit Dashboard: operational
+    Coolify Host: operational
+    Files Converter: operational
+    Messenger Relay: operational
+    N8N: operational
+    Secrets Share: operational
     Storage Share: operational
-    Vert: major
-    YTDL: major
+    Vert: operational
+    YTDL: operational
 Personal (Sites):
-  group-status: major
+  group-status: operational
   sites:
-    Home Page: major
+    Home Page: operational
