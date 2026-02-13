@@ -11,9 +11,11 @@ def is_up(url):
     retries = 0
     max_retries = 3  # Reduced from 10 to 3
     timeout = 5  # 5 second timeout per request
+    # Exclude zstd from accept-encoding to avoid "Zstandard data is incomplete" error on HEAD requests
+    headers = {"accept-encoding": "gzip, deflate"}
     while retries < max_retries:
         try:
-            response = head(url, timeout=timeout, allow_redirects=True)
+            response = head(url, timeout=timeout, allow_redirects=True, headers=headers)
             status_code = response.status_code
             print("Status code: " + str(status_code))
             if status_code == 200 or status_code == 302 or status_code == 301 or status_code == 307 or status_code == 401:
