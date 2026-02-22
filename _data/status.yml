@@ -1,5 +1,5 @@
 Personal (Hosted):
-  group-status: operational
+  group-status: partial
   sites:
     Addy Technologies Home Page: operational
     Churchkit Dashboard: operational
@@ -8,7 +8,7 @@ Personal (Hosted):
     Messenger Relay: operational
     N8N: operational
     Secrets Share: operational
-    Storage Share: operational
+    Storage Share: partial
     Vert: operational
     YTDL: operational
 Personal (Sites):
